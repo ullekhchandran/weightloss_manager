@@ -1,0 +1,33 @@
+
+<div class="container" id="login">
+   <h1>login</h1>
+  <form action="/login" method="post">
+    <label for="email" >Email:</label>
+    <input type="text" id="email" name="email"> <br>
+    <label for="password" >Password:</label>
+    <input type="text" id="password" name="password">
+    <button type="submit" class="btn btn-danger">login</button>
+    
+  </form>
+
+  <% if(message){ %>
+    <div style="color: red;">
+        <ul>
+            <li><%= message  %></li>
+        </ul>
+    </div>
+
+    <% } %>
+    <% if(errors && errors.length > 0){ %>
+
+        <div style="color: red;">
+            <ul>
+                <% errors.forEach(error=>{ %>
+                   <li><%= err.message  %></li>
+                <%});  %>
+            </ul>
+        </div>
+        <% } %>
+
+    
+</div>
